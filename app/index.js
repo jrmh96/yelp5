@@ -2,9 +2,13 @@ var express = require('express');
 var app = express();
 var ejs = require('ejs');
 
-//view engine set up
-app.engine('html', require('ejs').renderFile);
+app.engine('.html', require('ejs').__express);
+
+// Set the folder where the pages are kept
 app.set('views', __dirname + '/views');
+
+//view engine set up
+app.set('view engine', 'html');
 
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
@@ -30,6 +34,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     var message = err.message
     res.render('error', {
-        message: err.message
-    })
+        message: err.message,
+        status: err.status
+    });
 });
