@@ -4,7 +4,7 @@ jQuery(function ()
 		source: function (request, response) {
 		 $.ajax({
 			 url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+request.term+"&types=(cities)&key=AIzaSyAsILsPM6pNu6y7QRs0rhubHmRmehqXT3g",
-			 dataType:"jsonp",
+			 dataType:"json",
 			 data:{
 				 maxRows:10,
 				 style:"medium",
