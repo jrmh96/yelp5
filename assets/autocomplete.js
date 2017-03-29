@@ -2,11 +2,12 @@ jQuery(function ()
  {
 	 jQuery("#f_elem_city").autocomplete({
 		source: function (request, response) {
-		 $.ajax({
-			 url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+request.term+"&types=(cities)&key=AIzaSyAsILsPM6pNu6y7QRs0rhubHmRmehqXT3g",
-			 dataType:"json",
-			 contentType:"application/json"
-			})
+			jQuery.getJSON(
+				"http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+				function (data) {
+			 		response(data);
+				}
+		 	);
 		},
 		minLength: 3,
 		select: function (event, ui) {
