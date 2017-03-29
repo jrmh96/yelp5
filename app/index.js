@@ -17,8 +17,10 @@ var server = app.listen(process.env.PORT || 3000, function() {
 app.use(express.static(__dirname + '/assets'));
 
 //include routes
-var routes = require('../routes/index.js');
-
+//var routes = require('../routes/index.js');
+app.get('/', function(req, res, next){
+    return res.render('mainpage.html', {pageTitle : 'mainpage'});
+});
 //catch 404
 app.use(function(req, res, next) {
     var err = new Error('Sorry! that page doesn\'t exist');
