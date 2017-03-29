@@ -3,7 +3,7 @@ jQuery(function ()
 	 jQuery("#f_elem_city").autocomplete({
 		source: function (request, response) {
 		 jQuery.getJSON(
-			"https://www.gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+			"http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
 			function (data) {
 			 response(data);
 			}
