@@ -1,5 +1,3 @@
-process.env.PWD = process.cwd();
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
@@ -10,7 +8,7 @@ app.set('views', 'views')
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
-app.use('/assets', express.static(path.join(process.env.PWD, '/views')));
+app.use(express.static(path.join(__dirname + "/assets")));
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
