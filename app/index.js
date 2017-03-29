@@ -1,8 +1,8 @@
 var express = require('express');
-var app = express();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var path = require('path');
+var app = express();
 
 app.set('views', 'views')
 app.engine('.html', require('ejs').__express);
