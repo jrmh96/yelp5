@@ -22,11 +22,11 @@ app.get('/', function(req, res, next){
     return res.render('mainpage.html', {pageTitle : 'mainpage'});
 });
 //catch 404
-app.use(function(req, res, next) {
-    var err = new Error('Sorry! that page doesn\'t exist');
-    err.status = 404
-    next(err);
-});
+// app.use(function(req, res, next) {
+//     var err = new Error('Sorry! that page doesn\'t exist');
+//     err.status = 404
+//     next(err);
+// });
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
