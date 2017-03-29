@@ -1,3 +1,5 @@
+process.env.PWD = process.cwd();
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
@@ -10,7 +12,7 @@ app.set('view engine', 'html');
 
 // serve static files from views 
 //app.use(express.static(path.join(__dirname, 'assets')));
-app.use("/views", express.static("views"));
+app.use(express.static(path.join(process.env.PWD, 'public')));
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
