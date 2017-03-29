@@ -8,7 +8,7 @@ app.set('views', 'views')
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
-// serve static files from assets 
+// serve static files from views 
 //app.use(express.static(path.join(__dirname, 'assets')));
 app.use("/views", express.static("views"));
 //Initialize App
