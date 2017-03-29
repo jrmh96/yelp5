@@ -10,7 +10,7 @@ app.set('view engine', 'html');
 
 // serve static files from assets 
 //app.use(express.static(path.join(__dirname, 'assets')));
-app.use("/assets", express.static("assets"));
+app.use("/views", express.static("views"));
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
