@@ -21,8 +21,6 @@ app.use(express.static(__dirname + '/assets'));
 
 //include routes
 var routes = require('../routes/index.js');
-app.use(app.router);
-routes.initialize(app);
 
 //catch 404
 app.use(function(req, res, next) {
