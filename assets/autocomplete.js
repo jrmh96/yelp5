@@ -3,7 +3,7 @@ jQuery(function ()
 	 jQuery("#f_elem_city").autocomplete({
 		source: function (request, response) {
 		 $.ajax({
-			 url: "https://maps.googleapis.com/maps/api/place/autocomplete/xml?input="+request.term+"&types=(cities)&key=AIzaSyAsILsPM6pNu6y7QRs0rhubHmRmehqXT3g",
+			 url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+request.term+"&types=(cities)&key=AIzaSyAsILsPM6pNu6y7QRs0rhubHmRmehqXT3g",
 			 dataType:"jsonp",
 			 data:{
 				 maxRows:10,
