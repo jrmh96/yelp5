@@ -20,7 +20,7 @@ var server = app.listen(process.env.PORT || 3000, function() {
 app.use(express.static(__dirname + '/assets'));
 
 //include routes
-var routes = require('routes/index.js');
+var routes = require('../routes/index.js');
 app.use('/', routes);
 
 //catch 404
