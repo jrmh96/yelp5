@@ -5,3 +5,5 @@ var router = express.Router();
 router.get('/', function(req, res, next){
     return res.render('mainpage.html', {pageTitle : 'mainpage'});
 });
+
+module.exports = router;
