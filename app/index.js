@@ -1,13 +1,10 @@
 var express = require('express');
 var app = express();
 var ejs = require('ejs');
+var path = require('path');
 
+app.set('views', 'views')
 app.engine('.html', require('ejs').__express);
-
-// Set the folder where the pages are kept
-app.set('views', '../views');
-
-//view engine set up
 app.set('view engine', 'html');
 
 //Initialize App
