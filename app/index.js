@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var path = require('path');
 
@@ -12,6 +13,10 @@ var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
     console.log("App now running on port", port)
 });
+
+// parse incoming requests
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false}));
 
 // serve static files from assets 
 app.use(express.static(__dirname + '/assets'));
