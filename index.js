@@ -4,11 +4,10 @@ var ejs = require('ejs');
 var path = require('path');
 var app = express();
 
-app.set('views', 'views')
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
-app.use(express.static(path.join(__dirname, "assets")));
+app.use(express.static("assets"));
 
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
