@@ -12,7 +12,10 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "jquery": "^3.2.1",
-    "path": "^0.12.7",
+    "path": "^0.12.7"
+  },
+  "engines":{
+    "npm": "^3.10.8"  
   },
   "repository": {
     "type": "git",
