@@ -8,6 +8,9 @@ app.set('views', 'views')
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 
+// serve static files from assets 
+app.use(express.static(path.join(__dirname, 'assets')));
+
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
@@ -18,8 +21,6 @@ var server = app.listen(process.env.PORT || 3000, function() {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
-// serve static files from assets 
-app.use(express.static(__dirname + '/assets'));
 
 //include routes
 //var routes = require('../routes/index.js');
