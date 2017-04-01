@@ -1,6 +1,0 @@
-App ID: EDWtqyZJrbbGiFBlG6HifQ
-
-App Secret: iREoZk2ou2RqgWRi8rbO09aE4AUG59kJ6gsgmuduPMaSIitDtdDY8wpfHY37zXB5
-
-Google places API Key: AIzaSyAsILsPM6pNu6y7QRs0rhubHmRmehqXT3g
-
