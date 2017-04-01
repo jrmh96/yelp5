@@ -9,8 +9,15 @@
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous">
-    </script>    
+    </script>
 
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/28/7/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/28/7/util.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/28/7/controls.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/28/7/places_impl.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/28/7/geocoder.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/28/7/stats.js"></script>
+    
     <!-- Bootstrap Core CSS -->
     <link href="../assets/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/ >
 
@@ -53,15 +60,17 @@
                 <h3>Location</h3>
                 <p>Where do you want to eat?</p>
                 <p>City:
-                    <input type="text" class="my-input" name="field" tabindex="1" autocomplete="off">
+                    <form>
+                    <input id="geocomplete" type="text" placeholder="Type in an address" size="90" autocomplete="off">                   
+                    </form>
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- -->
-
 <script src="../assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script src="../assets/jquery.geocomplete.js"/>
 
 <% include footer.html %>
