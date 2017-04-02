@@ -52,7 +52,7 @@ app.post('/results', function(req, res, next){
     res.render('results.html', 
     {
         pageTitle : 'results',
-        results : JSON.stringify(r)
+        results : r
     });
 });
 
