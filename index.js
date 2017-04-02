@@ -46,7 +46,7 @@ app.post('/results', function(req, res, next){
     var location = req.body.location;
     var food = req.body.food;
 
-    var r = httpGet("https://api.yelp.com/v3/businesses/search?location=" + location + "&amp;term=" + food);
+    var r = httpGet("https://api.yelp.com/v3/businesses/search?limit=5&amp;location=" + location + "&amp;term=" + food);
      
     //res.render page with results
     res.render('results.html', 
