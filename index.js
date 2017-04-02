@@ -36,7 +36,6 @@ app.get('/', function(req, res, next){
 
 app.post('/results', function(req, res, next){
 
-
     //get first five results
     var location = req.body.location;
     var food = req.body.food;
@@ -48,8 +47,8 @@ app.post('/results', function(req, res, next){
     {
         pageTitle : 'results',
         results : JSON.stringify(results)
-    }
-    );
+    });
+});
 
 app.get('/google8947d3762b9e857f.html', function(req, res, next){
     return res.render('google8947d3762b9e857f.html');
