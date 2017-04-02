@@ -23,7 +23,7 @@ app.get('/', function(req, res, next){
     return res.render('mainpage.html', {pageTitle : 'mainpage'});
 });
 
-app.post('/', function(req, res, next){
+app.get('/results', function(req, res, next){
 
     //get first five results
     
