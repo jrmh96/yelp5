@@ -11,8 +11,9 @@ app.use('/assets', express.static(process.cwd() + "/assets"));
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
+    var auth_token = "Bearer dz3FFxfSP9uU2W9tpo9qwIQ0AfW1AsS_EEjKYJoox59wwDPGzaWxL8_O9xQ8ECe5ZFTRrqz88Waip4tP3rFQaNPF8jVl6f9RZCu2-WLa8DWTdk-wyvcovKXzZmrhWHYx"
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
+    xmlHttp.setRequestHeader("Authorization", auth_token);
     return JSON.parse(xmlHttp.responseText);
 }
 
@@ -42,9 +43,11 @@ app.post('/results', function(req, res, next){
     var results = httpGet("https://api.yelp.com/v3/businesses/search?location=" + location + "&amp;term=" + food);
      
     //res.render page with results
-    res.render('results.html', {
+    res.render('results.html', 
+    {
         pageTitle : 'results',
-        results : JSON.stringify(results)}
+        results : JSON.stringify(results)
+    }
     );
 
 app.get('/google8947d3762b9e857f.html', function(req, res, next){
