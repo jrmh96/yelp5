@@ -14,6 +14,7 @@ function httpGet(theUrl)
     var auth_token = "Bearer dz3FFxfSP9uU2W9tpo9qwIQ0AfW1AsS_EEjKYJoox59wwDPGzaWxL8_O9xQ8ECe5ZFTRrqz88Waip4tP3rFQaNPF8jVl6f9RZCu2-WLa8DWTdk-wyvcovKXzZmrhWHYx"
     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
     xmlHttp.setRequestHeader("Authorization", auth_token);
+    xhttp.send();
     return JSON.parse(xmlHttp.responseText);
 }
 
@@ -56,7 +57,7 @@ app.get('/google8947d3762b9e857f.html', function(req, res, next){
 
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    var message = err.message
+    var message = err.message;
     res.render('error', {
         message: err.message,
         status: err.status
