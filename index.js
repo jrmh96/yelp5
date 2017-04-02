@@ -15,11 +15,12 @@ function httpGet(theUrl)
         hostname : theUrl,
         port: '80',
         headers : {
+             'Content-Type' : 'application/json',
              'Authorization' : 'Bearer dz3FFxfSP9uU2W9tpo9qwIQ0AfW1AsS_EEjKYJoox59wwDPGzaWxL8_O9xQ8ECe5ZFTRrqz88Waip4tP3rFQaNPF8jVl6f9RZCu2-WLa8DWTdk-wyvcovKXzZmrhWHYx'
         }
     }
-    http.get(options, function(res){
-        var response = JSON.stringify();
+    return http.get(options, function(res){
+        console.log(res.body);
     });
 }
 
@@ -45,13 +46,13 @@ app.post('/results', function(req, res, next){
     var location = req.body.location;
     var food = req.body.food;
 
-    var results = httpGet("https://api.yelp.com/v3/businesses/search?location=" + location + "&amp;term=" + food);
+    var r = httpGet("https://api.yelp.com/v3/businesses/search?location=" + location + "&amp;term=" + food);
      
     //res.render page with results
     res.render('results.html', 
     {
         pageTitle : 'results',
-        results : JSON.stringify(results)
+        results : JSON.stringify(r)
     });
 });
 
