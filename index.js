@@ -7,10 +7,19 @@ var app = express();
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 app.use('/assets', express.static(process.cwd() + "/assets"));
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return JSON.parse(xmlHttp.responseText);
+}
+
 //Initialize App
 var server = app.listen(process.env.PORT || 3000, function() {
     var port = server.address().port;
-    console.log("App now running on port", port)
+    console.log("App now running on port", port);
 });
 
 // parse incoming requests
@@ -23,16 +32,20 @@ app.get('/', function(req, res, next){
     return res.render('mainpage.html', {pageTitle : 'mainpage'});
 });
 
-app.get('/results', function(req, res, next){
+app.post('/results', function(req, res, next){
+
 
     //get first five results
-    
-    if(false){
-        return res.render('no_results.html', {pageTitle : 'noresults'});
-    }
+    var location = req.body.location;
+    var food = req.body.food;
 
-    return res.render('results.html', {pageTitle : 'results'});
-});
+    var results = httpGet("https://api.yelp.com/v3/businesses/search?location=" + location + "&amp;term=" + food);
+     
+    //res.render page with results
+    res.render('results.html', {
+        pageTitle : 'results',
+        results : JSON.stringify(results)}
+    );
 
 app.get('/google8947d3762b9e857f.html', function(req, res, next){
     return res.render('google8947d3762b9e857f.html');

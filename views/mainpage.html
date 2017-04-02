@@ -61,7 +61,7 @@
                 <p>Where do you want to eat?</p>
                 <p>
                     <form>
-                    <input id="input" type="text" placeholder="Type in an address" autocomplete="off">                                       
+                    <input id="location" name="location" type="text" placeholder="Type in an address" autocomplete="off">                                       
                     </form>
                 </p>
             </div>
@@ -79,7 +79,7 @@
                 <p>What kind of food do you want?</p>
                 <p>
                     <form>
-                    <input id="X" type="text" placeholder="Type in some food" autocomplete="off">                                       
+                    <input id="food" name="food" type="text" placeholder="Type in some food" autocomplete="off">                                       
                     </form>
                 </p>
             </div>
@@ -89,7 +89,9 @@
 </div>
 
 <div class="row text-center">
-    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form" method="post" action="/results">
+        <button type="submit" class="btn btn-default">Submit</button>
+    </div>
 </div>
 
 
