@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var path = require('path');
 var app = express();
+var http = require('http');
 
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
@@ -10,12 +11,17 @@ app.use('/assets', express.static(process.cwd() + "/assets"));
 
 function httpGet(theUrl)
 {
-    var xmlHttp = new XMLHttpRequest();
-    var auth_token = "Bearer dz3FFxfSP9uU2W9tpo9qwIQ0AfW1AsS_EEjKYJoox59wwDPGzaWxL8_O9xQ8ECe5ZFTRrqz88Waip4tP3rFQaNPF8jVl6f9RZCu2-WLa8DWTdk-wyvcovKXzZmrhWHYx"
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.setRequestHeader("Authorization", auth_token);
-    xhttp.send();
-    return JSON.parse(xmlHttp.responseText);
+    var options = {
+        hostname : theUrl,
+        port: '80',
+        headers : {
+             'Content-Type' : 'application/json',
+             'Authorization' : 'Bearer dz3FFxfSP9uU2W9tpo9qwIQ0AfW1AsS_EEjKYJoox59wwDPGzaWxL8_O9xQ8ECe5ZFTRrqz88Waip4tP3rFQaNPF8jVl6f9RZCu2-WLa8DWTdk-wyvcovKXzZmrhWHYx'
+        }
+    }
+    http.get(options, function(res){
+        var response = JSON.stringify();
+    });
 }
 
 //Initialize App
