@@ -15,7 +15,6 @@ function httpGet(theUrl)
         hostname : theUrl,
         port: '80',
         headers : {
-             'Content-Type' : 'application/json',
              'Authorization' : 'Bearer dz3FFxfSP9uU2W9tpo9qwIQ0AfW1AsS_EEjKYJoox59wwDPGzaWxL8_O9xQ8ECe5ZFTRrqz88Waip4tP3rFQaNPF8jVl6f9RZCu2-WLa8DWTdk-wyvcovKXzZmrhWHYx'
         }
     }
