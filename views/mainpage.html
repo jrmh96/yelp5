@@ -19,6 +19,11 @@
     <!-- Custom CSS -->
     <link href="../assets/heroic-features.css" rel="stylesheet" />
 
+    <script>
+    $(function(){
+        $("#input").geocomplete();
+    });
+    </script>
 
 </head>
 <body>
@@ -56,7 +61,7 @@
                 <p>Where do you want to eat?</p>
                 <p>
                     <form>
-                    <input id="geocomplete" type="text" placeholder="Type in an address" autocomplete="off">                                       
+                    <input id="input" type="text" placeholder="Type in an address" autocomplete="off">                                       
                     </form>
                 </p>
             </div>
