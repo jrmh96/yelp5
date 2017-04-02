@@ -23,6 +23,17 @@ app.get('/', function(req, res, next){
     return res.render('mainpage.html', {pageTitle : 'mainpage'});
 });
 
+app.post('/', function(req, res, next){
+
+    //get first five results
+    
+    if(false){
+        return res.render('no_results.html', {pageTitle : 'noresults'});
+    }
+
+    return res.render('results.html', {pageTitle : 'results'});
+});
+
 app.get('/google8947d3762b9e857f.html', function(req, res, next){
     return res.render('google8947d3762b9e857f.html');
 });
