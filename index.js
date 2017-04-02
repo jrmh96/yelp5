@@ -22,14 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.get('/', function(req, res, next){
     return res.render('mainpage.html', {pageTitle : 'mainpage'});
 });
-//catch 404
-// app.use(function(req, res, next) {
-//     var err = new Error('Sorry! that page doesn\'t exist');
-//     err.status = 404
-//     next(err);
-// });
 
-router.get('/google8947d3762b9e857f.html', function(req, res, next){
+app.get('/google8947d3762b9e857f.html', function(req, res, next){
     return res.render('google8947d3762b9e857f.html');
 });
 
