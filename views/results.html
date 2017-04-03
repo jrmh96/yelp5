@@ -12,6 +12,11 @@
     crossorigin="anonymous">
     </script>
     <script>
+    var rating = document.getElementById("rating").getAttribute("name");
+    var rate_number = rating.toString();
+    rate_number.replace(".5", "_half");
+    
+    document.getElementById("rating").setAttribute("href", "../assets/images/regular/regular_" +rate_number+".png");
     
     </script>
     <!-- Bootstrap Core CSS -->
@@ -53,8 +58,8 @@
         <p><%= rest.name %></p>
         <p><%= rest.location.address1 %>, <%=rest.location.city%>, <%=rest.location.state%>, <%=rest.location.zip_code%></p>
         <p><%= rest.phone%></p>
-        <p><img src="../assets/images/regular/<%= rest.rating>.jpg"></img></p>
-        <p><a href= "<%= rest.url %>"><img src = "../assets/images/Yelp_trademark_RGB.png" width = "50" height="32"></img></a></p>
+        <p><img id="rating" name="<%=rest.rating>" src=""></img></p>
+        <p><a href= "<%= rest.url %>"><img src = "../assets/images/Yelp_trademark_RGB.png" width = "75" height="48"></img></a></p>
     </div>
 </div>
 <% }); %>
