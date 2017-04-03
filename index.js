@@ -38,7 +38,7 @@ app.post('/results', function(req, res, next){
     var oReq = new XMLHttpRequest();
     function reqListener() {
         data = JSON.parse(this.responseText);    
-        console.log(data);
+        //console.log(data);
         res.render('results.html', 
         {
             pageTitle : 'results',
@@ -58,7 +58,7 @@ app.get('/google8947d3762b9e857f.html', function(req, res, next){
 });
 
 app.get('/about', function(req, res, next){
-    return res.render(about.html);
+    return res.render('about.html', {pageTitle : "about"});
 });
 
 app.use(function(err, req, res, next) {
