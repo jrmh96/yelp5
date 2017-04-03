@@ -57,6 +57,10 @@ app.get('/google8947d3762b9e857f.html', function(req, res, next){
     return res.render('google8947d3762b9e857f.html');
 });
 
+app.get('/about', function(req, res, next){
+    return res.render(about.html);
+});
+
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     var message = err.message;
