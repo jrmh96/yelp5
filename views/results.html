@@ -20,16 +20,7 @@
 
 </head>
 <body>
-<!-- 
-<ul>
-    <% data.businesses.forEach(function(rest) { %>
-        <li><%= rest.name %> </li>
-        <li><%= rest.location.address1 %>, <%=rest.location.city%>, <%=rest.location.state%>, <%=rest.location.zip_code%></li>
-        <li><%= rest.phone%></li>
-        <li><a href= "<%= rest.url %>"> <%= rest.name %></a>
-    <% }); %>
-</ul>
--->
+
 <!-- #1 -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role = "navigation">
     <div class="container-fluid">
@@ -56,11 +47,11 @@
 </nav>
 <% data.businesses.forEach(function(rest) { %>
 <div class="row text-center">
-    <div class="col-md-4 col-sm-6 hero-feature">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 hero-feature">
         <p><%= rest.name %></p>
         <p><%= rest.location.address1 %>, <%=rest.location.city%>, <%=rest.location.state%>, <%=rest.location.zip_code%></p>
         <p><%= rest.phone%></p>
-        <p><a href= "<%= rest.url %>"> <%= rest.name %></a></p>
+        <p><a href= "<%= rest.url %>"><img src = "../assets/images/Yelp_trademark_RGB.png" width = "50" height="32"></img></a></p>
     </div>
 </div>
 <% }); %>
