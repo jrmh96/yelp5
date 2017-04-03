@@ -38,6 +38,7 @@ app.post('/results', function(req, res, next){
     var oReq = new XMLHttpRequest();
     function reqListener() {
         data = JSON.parse(this.responseText);    
+        console.log(data);
         res.render('results.html', 
         {
             pageTitle : 'results',
