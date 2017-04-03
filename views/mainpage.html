@@ -27,6 +27,7 @@
 
 </head>
 <body>
+<form method="post" action="/results">
 <nav class="navbar navbar-inverse navbar-fixed-top" role = "navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -36,7 +37,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-brand">Yelp5</div>
+            <a class="navbar-brand" href="/">Yelp5</a>
         </div>
 
         <div class="collapse navbar-collapse" id="c1">
@@ -60,9 +61,9 @@
                 <h3>Location</h3>
                 <p>Where do you want to eat?</p>
                 <p>
-                    <form>
+                    
                     <input id="location" name="location" type="text" placeholder="Type in an address" autocomplete="off">                                       
-                    </form>
+                
                 </p>
             </div>
         </div>
@@ -78,9 +79,9 @@
                 <h3>Food</h3>
                 <p>What kind of food do you want?</p>
                 <p>
-                    <form>
+                    
                     <input id="food" name="food" type="text" placeholder="Type in some food" autocomplete="off">                                       
-                    </form>
+                    
                 </p>
             </div>
         </div>
@@ -89,12 +90,12 @@
 </div>
 
 <div class="row text-center">
-    <form method="post" action="/results">
+    
         <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+   
 </div>
 
-
+ </form>
 <script src="../assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="../assets/jquery.geocomplete.js"></script>
 <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/28/7/common.js"></script>

@@ -1,49 +1,70 @@
 <% include head.html %>
 </title>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+    </script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/ >
+
+    <!-- Custom CSS -->
+    <link href="../assets/heroic-features.css" rel="stylesheet" />
+
+</head>
 <body>
-
-<div id="results">
-    <%= results %>
-</div>
+<!-- 
+<ul>
+    <% data.businesses.forEach(function(rest) { %>
+        <li><%= rest.name %> </li>
+        <li><%= rest.location.address1 %>, <%=rest.location.city%>, <%=rest.location.state%>, <%=rest.location.zip_code%></li>
+        <li><%= rest.phone%></li>
+        <li><a href= "<%= rest.url %>"> <%= rest.name %></a>
+    <% }); %>
+</ul>
+-->
 <!-- #1 -->
-<div class="row text-center">
-    <div class="col-md-4 col-sm-6 hero-feature">
-        <div id="restaurant_name"></div>
-        <div id="restaurant_address"></div>
-    </div>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top" role = "navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#c1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Yelp5</a>
+        </div>
 
-<!-- #2 -->
+        <div class="collapse navbar-collapse" id="c1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse-->
+    </div>
+    <!-- /.container-->
+</nav>
+<% data.businesses.forEach(function(rest) { %>
 <div class="row text-center">
     <div class="col-md-4 col-sm-6 hero-feature">
-        <div id="restaurant_name2"></div>
-        <div id="restaurant_address2"></div>
+        <p><%= rest.name %></p>
+        <p><%= rest.location.address1 %>, <%=rest.location.city%>, <%=rest.location.state%>, <%=rest.location.zip_code%></p>
+        <p><%= rest.phone%></p>
+        <p><a href= "<%= rest.url %>"> <%= rest.name %></a></p>
     </div>
 </div>
+<% }); %>
 
-<!-- #3 -->
-<div class="row text-center">
-    <div class="col-md-4 col-sm-6 hero-feature">
-        <div id="restaurant_name3"></div>
-        <div id="restaurant_address3"></div>
-    </div>
-</div>
-
-<!-- #4 -->
-<div class="row text-center">
-    <div class="col-md-4 col-sm-6 hero-feature">
-        <div id="restaurant_name4"></div>
-        <div id="restaurant_address4"></div>
-    </div>
-</div>
-
-<!-- #5 -->
-<div class="row text-center">
-    <div class="col-md-4 col-sm-6 hero-feature">
-        <div id="restaurant_name4"></div>
-        <div id="restaurant_address4"></div>
-    </div>
-</div>
+<script src="../assets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
 <%include footer.html%>
